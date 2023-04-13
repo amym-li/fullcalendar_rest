@@ -1,0 +1,9 @@
+.fc .fc-daygrid-day-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fc a[data-navlink]:hover {
+    text-decoration: none;
+}

@@ -9,6 +9,9 @@ libraries.fullcalendar:
     https://www.unpkg.com/fullcalendar@6.1.5/index.global.min.js: { type: external, minified: true }
 
 fullcalendar_solr:
+  css:
+    theme:
+      css/fullcalendar.css: {}
   js:
     js/fullcalendar_view.js: {}
   dependencies:
