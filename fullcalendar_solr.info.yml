@@ -1,0 +1,6 @@
+name: FullCalendar Solr
+type: module
+description: 'Provides integration between FullCalendar and Search API through REST exports.'
+package: Search
+version: 1.0
+core_version_requirement: ^8 || ^9
