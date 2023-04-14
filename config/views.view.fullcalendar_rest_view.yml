@@ -10,7 +10,7 @@ dependencies:
     - rest
     - search_api
     - serialization
-id: fullcalendar_solr_based_view
+id: fullcalendar_rest_view
 label: 'FullCalendar Solr Based View'
 module: views
 description: ''

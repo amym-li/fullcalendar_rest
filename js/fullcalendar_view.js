@@ -4,7 +4,7 @@
 
     attach: function (context, settings) {
 
-      $('.views-view--fullcalendar_solr_based_view').once('solrViewFullCalendarInit').each(function () {
+      $('.views-view--fullcalendar_rest_view').once('solrViewFullCalendarInit').each(function () {
         var currentYear = new Date().getFullYear();
 
         calendar = new Calendar('#calendar', {

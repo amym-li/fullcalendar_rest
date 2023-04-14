@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains fullcalendar_rest.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function fullcalendar_rest_theme($existing, $type, $theme, $path) {
+  return [
+    'views_view__fullcalendar_rest_view' => [
+      'template' => 'views-view--fullcalendar_rest_view',
+      'variables' => []
+    ],
+  ];
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function fullcalendar_rest_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'fullcalendar_rest_view')) {
+    $view->element['#attached']['library'][] = 'fullcalendar_rest/libraries.js-year-calendar';
+    $view->element['#attached']['library'][] = 'fullcalendar_rest/fullcalendar_rest';
+  }
+}
+
