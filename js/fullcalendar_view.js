@@ -57,7 +57,7 @@
               start: '2023-04-28',display: "background"
             }
           ],
-          multiMonthMinWidth: 200,
+          multiMonthMinWidth: 170,
           multiMonthMaxColumns: 4,
           contentHeight:"auto",
           dayHeaderFormat: {
