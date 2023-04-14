@@ -4,7 +4,7 @@
 
     attach: function (context, settings) {
 
-      $('.views-view--fullcalendar_solr_based_view').once('solrViewFullCalendarInit').each(function () {
+      $('.views-view--fullcalendar_rest_view').once('solrViewFullCalendarInit').each(function () {
 
         // Get URL so we can pass facets args to rest API endpoint.
         var api_endpoint = '/api/calendar' + window.location.search;
