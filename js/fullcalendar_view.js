@@ -5,72 +5,82 @@
     attach: function (context, settings) {
 
       $('.views-view--fullcalendar_solr_based_view').once('solrViewFullCalendarInit').each(function () {
+        var currentYear = new Date().getFullYear();
 
-        // Get URL so we can pass facets args to rest API endpoint.
-        var api_endpoint = '/api/calendar' + window.location.search;
-
-        var calendarEl = document.getElementById('fullcalendar');
-
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'multiMonthYear',
-          //events: api_endpoint,
-          events: [
+        calendar = new Calendar('#calendar', {
+          dataSource: [
             {
-              start: '2023-04-01',
-              display: "background"
+              id: 0,
+              name: 'Google I/O',
+              location: 'San Francisco, CA',
+              startDate: new Date(currentYear, 4, 28),
+              endDate: new Date(currentYear, 4, 29)
             },
             {
-              start: '2023-04-07',
-              display: "background"
+              id: 1,
+              name: 'Microsoft Convergence',
+              location: 'New Orleans, LA',
+              startDate: new Date(currentYear, 2, 16),
+              endDate: new Date(currentYear, 2, 19)
             },
             {
-              start: '2023-04-09',
-              display: "background"
+              id: 2,
+              name: 'Microsoft Build Developer Conference',
+              location: 'San Francisco, CA',
+              startDate: new Date(currentYear, 3, 29),
+              endDate: new Date(currentYear, 4, 1)
             },
             {
-              start: '2023-04-16',
-              display: "background"
+              id: 3,
+              name: 'Apple Special Event',
+              location: 'San Francisco, CA',
+              startDate: new Date(currentYear, 8, 1),
+              endDate: new Date(currentYear, 8, 1)
             },
             {
-              start: '2023-04-11',
-              display: "background"
+              id: 4,
+              name: 'Apple Keynote',
+              location: 'San Francisco, CA',
+              startDate: new Date(currentYear, 8, 9),
+              endDate: new Date(currentYear, 8, 9)
             },
             {
-              start: '2023-04-25',display: "background"
+              id: 5,
+              name: 'Chrome Developer Summit',
+              location: 'Mountain View, CA',
+              startDate: new Date(currentYear, 10, 17),
+              endDate: new Date(currentYear, 10, 18)
             },
             {
-              start: '2023-04-29',display: "background"
+              id: 6,
+              name: 'F8 2015',
+              location: 'San Francisco, CA',
+              startDate: new Date(currentYear, 2, 25),
+              endDate: new Date(currentYear, 2, 26)
             },
             {
-              start: '2023-04-26',display: "background"
+              id: 7,
+              name: 'Yahoo Mobile Developer Conference',
+              location: 'New York',
+              startDate: new Date(currentYear, 7, 25),
+              endDate: new Date(currentYear, 7, 26)
             },
             {
-              start: '2023-04-24',display: "background"
+              id: 8,
+              name: 'Android Developer Conference',
+              location: 'Santa Clara, CA',
+              startDate: new Date(currentYear, 11, 1),
+              endDate: new Date(currentYear, 11, 4)
             },
             {
-              start: '2023-04-10',display: "background"
-            },
-            {
-              start: '2023-04-13',display: "background"
-            },
-            {
-              start: '2023-04-28',display: "background"
+              id: 9,
+              name: 'LA Tech Summit',
+              location: 'Los Angeles, CA',
+              startDate: new Date(currentYear, 10, 17),
+              endDate: new Date(currentYear, 10, 17)
             }
-          ],
-          multiMonthMinWidth: 170,
-          multiMonthMaxColumns: 4,
-          contentHeight:"auto",
-          dayHeaderFormat: {
-            weekday: 'narrow',    // Monday, Wednesday, etc
-          },
-          eventClick: function(date, jsEvent, view) {
-            console.log("hi");
-          },
-          defaultAllDay:true,
-          navLinks: true
-        })
-
-        calendar.render();
+          ]
+        });
       });
     }
   };

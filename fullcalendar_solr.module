@@ -26,7 +26,7 @@ function fullcalendar_solr_theme($existing, $type, $theme, $path) {
  */
 function fullcalendar_solr_views_pre_render(ViewExecutable $view) {
   if (isset($view) && ($view->storage->id() == 'fullcalendar_solr_based_view')) {
-    $view->element['#attached']['library'][] = 'fullcalendar_solr/libraries.fullcalendar';
+    $view->element['#attached']['library'][] = 'fullcalendar_solr/libraries.js-year-calendar';
     $view->element['#attached']['library'][] = 'fullcalendar_solr/fullcalendar_solr';
   }
 }

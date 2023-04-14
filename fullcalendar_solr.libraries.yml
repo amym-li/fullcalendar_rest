@@ -1,12 +1,15 @@
-libraries.fullcalendar:
-  remote: https://fullcalendar.io/
-  version: '6.1.5'
+libraries.js-year-calendar:
+  remote: https://year-calendar.github.io/
+  version: '2.0.0'
   license:
-    name: MIT
-    url: https://github.com/fullcalendar/fullcalendar/blob/master/LICENSE.txt
+    name: Apache License 2.0
+    url: https://github.com/year-calendar/js-year-calendar/blob/master/LICENSE
     gpl-compatible: true
   js:
-    https://www.unpkg.com/fullcalendar@6.1.5/index.global.min.js: { type: external, minified: true }
+    https://unpkg.com/js-year-calendar@2.0.0/dist/js-year-calendar.min.js: { type: external, minified: true }
+  css:
+    theme:
+      https://unpkg.com/js-year-calendar@2.0.0/dist/js-year-calendar.min.css: { type: external, minified: true }
 
 fullcalendar_solr:
   css:
@@ -16,4 +19,4 @@ fullcalendar_solr:
     js/fullcalendar_view.js: {}
   dependencies:
     - core/jquery
-    - fullcalendar_solr/libraries.fullcalendar
+    - fullcalendar_solr/libraries.js-year-calendar
