@@ -1,4 +1,4 @@
-name: FullCalendar Solr
+name: FullCalendar REST
 type: module
 description: 'Provides integration between FullCalendar and Search API through REST exports.'
 package: Search
